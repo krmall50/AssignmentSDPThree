@@ -50,5 +50,12 @@ public class Main {
         mainMenu.add(breakfast);
 
         mainMenu.print();
+
+        System.out.println("---------------Decorator--------------");
+
+        Pizza pizza = new MargheritaPizza();
+        pizza = new PepperoniTopping(pizza);
+        pizza = new CheeseTopping(pizza);
+        System.out.println("Description: " + pizza.getDesc() + "\n" + "Cost: " + pizza.getCost());
         }
     }
