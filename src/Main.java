@@ -71,6 +71,13 @@ public class Main {
         smart.nightMode();
         smart.LeaveHome();
 
+        System.out.println("---------------Facade--------------");
+
+        TextEditor editor = new TextEditor();
+        editor.insertText("Hello world", "Arial", 12, 10, 15, 2);
+        editor.insertText("Bye Hollow", "Arial", 12, 10, 45, 2);
+        editor.renderDocument();
+
         }
 
 
