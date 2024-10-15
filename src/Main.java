@@ -57,5 +57,21 @@ public class Main {
         pizza = new PepperoniTopping(pizza);
         pizza = new CheeseTopping(pizza);
         System.out.println("Description: " + pizza.getDesc() + "\n" + "Cost: " + pizza.getCost());
+
+        System.out.println("---------------Facade--------------");
+
+        Light light = new Light();
+        Thermostat thermostat = new Thermostat();
+        SecuritySystem security = new SecuritySystem();
+        EntertainmentSystem entertainment = new EntertainmentSystem();
+        SmartHomeFacade smart = new SmartHomeFacade(light, thermostat, security, entertainment);
+
+        smart.arriveHome();
+        smart.movieMode("Naruto");
+        smart.nightMode();
+        smart.LeaveHome();
+
         }
+
+
     }
