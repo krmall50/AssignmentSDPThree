@@ -71,12 +71,28 @@ public class Main {
         smart.nightMode();
         smart.LeaveHome();
 
-        System.out.println("---------------Facade--------------");
+        System.out.println("---------------Flyweight--------------");
 
         TextEditor editor = new TextEditor();
         editor.insertText("Hello world", "Arial", 12, 10, 15, 2);
         editor.insertText("Bye Hollow", "Arial", 12, 10, 45, 2);
         editor.renderDocument();
+
+        System.out.println("---------------Proxy--------------");
+
+        OnlineCourse course = new OnlineCourse();
+        course.addVideoLectures(new ProxyVideoLecture("Java"));
+        course.addVideoLectures(new ProxyVideoLecture("Python"));
+        course.addVideoLectures(new ProxyVideoLecture("C++"));
+
+        System.out.println("Content: ");
+        course.showCourseContent();
+
+        System.out.println();
+        System.out.println("Starting video...");
+        course.playVideoLecture(1);
+        course.playVideoLecture(2);
+        course.playVideoLecture(0);
 
         }
 
